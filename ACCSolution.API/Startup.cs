@@ -1,4 +1,6 @@
+using ACCSolution.Entities.Models.Contracts;
 using ACCSolution.Entities.Models.Databases;
+using ACCSolution.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,7 @@ namespace ACCSolution.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<RepositoryContext>(db => db.UseSqlServer(Configuration["Databases:MySql"]));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllers();
         }
 
