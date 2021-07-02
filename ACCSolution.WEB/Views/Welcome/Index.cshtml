@@ -1,0 +1,9 @@
+﻿@model List<Category>
+
+<p>Hello abed this is the list of all categories</p>
+
+
+@foreach (var category in Model)
+{
+    <b>Category Name : @category.Name</b>
+}

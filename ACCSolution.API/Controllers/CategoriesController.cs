@@ -25,7 +25,10 @@ namespace ACCSolution.API.Controllers
         [HttpGet]
         public ActionResult<List<Category>> GetAllCategories()
         {
-            var allCategories = _unitOfWork.CategoryRepository.FindAll().ToList();
+            var allCategories = _unitOfWork.CategoryRepository
+                .FindAll()
+                
+                .ToList();
             if (allCategories.Count > 0)
                 return Ok(allCategories);
 

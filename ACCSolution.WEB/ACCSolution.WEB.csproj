@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ACCSolution.Entities\ACCSolution.Entities.csproj" />
+    <ProjectReference Include="..\ACCSolution.Libraries\ACCSolution.Libraries.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCSolution.WEB", "ACCSolut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCSolution.Entities", "ACCSolution.Entities\ACCSolution.Entities.csproj", "{F5FA72DC-D249-447F-8113-9878E2ADDBDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACCSolution.Repository", "ACCSolution.Repository\ACCSolution.Repository.csproj", "{01B02DE8-868C-40A1-9CD1-8088CC8B3791}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCSolution.Repository", "ACCSolution.Repository\ACCSolution.Repository.csproj", "{01B02DE8-868C-40A1-9CD1-8088CC8B3791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACCSolution.Libraries", "ACCSolution.Libraries\ACCSolution.Libraries.csproj", "{3C73297A-0A2E-4C3D-8864-7B4E0C36B5F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{01B02DE8-868C-40A1-9CD1-8088CC8B3791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01B02DE8-868C-40A1-9CD1-8088CC8B3791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01B02DE8-868C-40A1-9CD1-8088CC8B3791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C73297A-0A2E-4C3D-8864-7B4E0C36B5F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C73297A-0A2E-4C3D-8864-7B4E0C36B5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C73297A-0A2E-4C3D-8864-7B4E0C36B5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C73297A-0A2E-4C3D-8864-7B4E0C36B5F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
