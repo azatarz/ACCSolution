@@ -10,6 +10,5 @@ namespace ACCSolution.Entities.Models.Contracts
         ISubCategoryRepository SubCategoryRepository { get; }
 
         void SaveChanges();
-
     }
 }

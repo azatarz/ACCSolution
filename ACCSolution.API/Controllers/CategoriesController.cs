@@ -45,5 +45,30 @@ namespace ACCSolution.API.Controllers
             return NoContent();
         }
 
+
+        [HttpPost]
+        public ActionResult InsertCategory(Category category)
+        {
+            //string name = category.Name.ToString();
+            //var cat=_unitOfWork
+
+            var duplicateList = _unitOfWork.CategoryRepository.FindAll()
+                .Where(x => x.Name.ToLower().Trim() == category.Name.ToLower().Trim())
+                .FirstOrDefault();
+
+            if(duplicateList == null)
+			{
+                _unitOfWork.CategoryRepository.Insert(category);
+                _unitOfWork.SaveChanges();
+                return Ok();
+            }
+			else
+			{
+                return BadRequest("Duplicate names found !");
+			}
+            
+        }
+
+
     }
 }

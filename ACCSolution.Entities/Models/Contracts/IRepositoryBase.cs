@@ -6,11 +6,11 @@ namespace ACCSolution.Entities.Models.Contracts
 {
     public interface IRepositoryBase<T> where T : class
     {
-        void InsertAbed(T entity);
-        void UpdateAbed(T entity);
-        void DeleteAbed(T entity);
+        void Insert(T entity);
+        void Update(T entity);
+        void Delete(T entity);
 
-
+        IEnumerable<T> FindAll();
         // find all
         // IEnumerable<T> FindAll();
 

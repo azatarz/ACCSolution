@@ -15,16 +15,13 @@ namespace ACCSolution.Repository
 
         }
 
-        public IEnumerable<Category> FindAll()
-        {
-            return Context.Set<Category>()
-                .Include(x => x.SubCategories)
-                .AsEnumerable();
-        }
+
 
         public Category FindAllById(int id)
         {
             return Context.Set<Category>().Where(x => x.Id == id).FirstOrDefault();
         }
-    }
+
+
+	}
 }

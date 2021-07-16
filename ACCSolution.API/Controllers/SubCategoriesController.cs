@@ -31,5 +31,15 @@ namespace ACCSolution.API.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<List<SubCategory>> GetSubCategoryById(int id)
+        {
+            //var allSubCategories = _unitOfWork.SubCategoryRepository.FindSubCategory();
+            //if (allSubCategories != null)
+            //    return Ok(allSubCategories);
+
+            return NoContent();
+        }
     }
 }

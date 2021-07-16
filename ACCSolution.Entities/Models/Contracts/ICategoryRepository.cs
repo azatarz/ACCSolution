@@ -7,7 +7,9 @@ namespace ACCSolution.Entities.Models.Contracts
 {
     public interface ICategoryRepository : IRepositoryBase<Category>
     {
-        IEnumerable<Category> FindAll();
+        // IEnumerable<Category> FindAll();
         Category FindAllById(int id);
+
+        
     }
 }

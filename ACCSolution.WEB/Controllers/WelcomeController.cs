@@ -30,8 +30,6 @@ namespace ACCSolution.WEB.Controllers
                 {
                     return View(new List<Category>() { });
                 }
-
-
             }
             catch (Exception ex)
             {

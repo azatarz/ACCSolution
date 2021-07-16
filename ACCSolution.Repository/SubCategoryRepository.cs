@@ -15,10 +15,15 @@ namespace ACCSolution.Repository
 
         }
 
-        public IEnumerable<SubCategory> FindAll()
-        {
-            return Context.Set<SubCategory>().AsEnumerable();
-        }
-    
-    }
+		public IEnumerable<SubCategory> FindSubCategory(SubCategory Subcat)
+		{
+			return Context.Set<SubCategory>();
+		}
+
+		public IEnumerable<SubCategory> FindSubCategoryByCategoryID(int id)
+		{
+			return Context.Set<SubCategory>()
+				.Where(x => x.CategoryId == id);
+		}
+	}
 }

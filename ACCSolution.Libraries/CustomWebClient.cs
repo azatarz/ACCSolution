@@ -13,34 +13,29 @@ namespace ACCSolution.Libraries
 
         public CustomWebClient()
         {
-
             _client = new HttpClient();
         }
 
+
         public async Task<HttpResponseMessage> GetAsync(string url)
-        {
-            
+        {    
             var response = await _client.GetAsync(url);
             return response;
-
-
         }
 
 
         public void ConfigureHandler()
         {
             _httpClientHandler = new HttpClientHandler();
-
             _httpClientHandler.ServerCertificateCustomValidationCallback = CertificateValidation;
-
-
         }
-
+        
 
         public bool CertificateValidation(HttpRequestMessage request, X509Certificate2 certificate, X509Chain certificateChain, SslPolicyErrors policy)
         {
             return true;
         }
+
 
     }
 }
