@@ -2,20 +2,17 @@
 
 <p>Hello abed this is the list of all categories</p>
 
-<div class="row">
-    @foreach (var category in Model)
-    {
-        var imagePath = $"~/Images/{category.IconPath}";
-        <div class="col-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="@imagePath" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">@category.Name</h5>
-                </div>
+<div class="card-deck">
+	@foreach (var category in Model)
+	{
+		var imagePath = $"Images\\{category.IconPath}";
+		<div class="card">
+			<img class="card-img-top" src="@imagePath" alt="Card image cap" style="height:100px">
+			<div class="card-body">
+				<a href="#">	<h5 class="card-title">@category.Name</h5></a>
+			</div>
+		</div>
 
-            </div>
-        </div>
-
-    }
+	}
 
 </div>

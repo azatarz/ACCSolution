@@ -1,0 +1,17 @@
+﻿@model List<SubCategory>
+
+
+<div class="card-deck">
+	@foreach (var subcategory in Model)
+	{
+		var imagePath = $"Images\\{subcategory.IconPath}";
+		<div class="card">
+			<img class="card-img-top" src="@imagePath" alt="Card image cap" style="height:100px">
+			<div class="card-body">
+				<a href="#">	<h5 class="card-title">@subcategory.Name</h5></a>
+			</div>
+		</div>
+
+	}
+
+</div>

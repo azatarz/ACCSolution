@@ -12,6 +12,7 @@ namespace ACCSolution.WEB.Controllers
 {
     public class WelcomeController : Controller
     {
+
         public async Task<ActionResult> Index()
         {
             CustomWebClient client = new CustomWebClient();
@@ -35,7 +36,34 @@ namespace ACCSolution.WEB.Controllers
             {
                 return View("Error");
             }
-            
+
+        }
+
+        [HttpGet("{id}")] 
+        public async Task<ActionResult> Subcategory(int id)
+		{
+            CustomWebClient client = new CustomWebClient();
+            var response = await client.GetAsync($"https://localhost:44321/api/SubCategories/{id}");
+            try
+            {
+                response.EnsureSuccessStatusCode();
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    string responseString = await response.Content.ReadAsStringAsync();
+                    var output = JsonConvert.DeserializeObject<List<Category>>(responseString);
+                    return View(output);
+                }
+                else
+                {
+                    return View(new List<Category>() { });
+                }
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+            }
+
         }
     }
 }
