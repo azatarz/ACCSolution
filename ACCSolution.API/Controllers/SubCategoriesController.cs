@@ -37,12 +37,10 @@ namespace ACCSolution.API.Controllers
         {
             var AllSubcategoriesById = _unitOfWork.SubCategoryRepository.FindSubCategoryByCategoryID(id);
 
-            if(AllSubcategoriesById==null)
+            if(!AllSubcategoriesById.Any())
                 return NoContent();
-            return Ok(AllSubcategoriesById);
-            //var allSubCategories = _unitOfWork.SubCategoryRepository.FindSubCategory();
-            //if (allSubCategories != null)
-            //    return Ok(allSubCategories);
+
+            return Ok(AllSubcategoriesById.ToList());
 
 
         }

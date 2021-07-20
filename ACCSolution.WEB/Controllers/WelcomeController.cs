@@ -24,12 +24,12 @@ namespace ACCSolution.WEB.Controllers
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     string responseString = await response.Content.ReadAsStringAsync();
-                    var output = JsonConvert.DeserializeObject<List<subcategory>>(responseString);
+                    var output = JsonConvert.DeserializeObject<List<Category>>(responseString);
                     return View(output);
                 }
                 else
                 {
-                    return View(new List<subcategory>() { });
+                    return View(new List<Category>() { });
                 }
             }
             catch (Exception ex)
@@ -48,16 +48,18 @@ namespace ACCSolution.WEB.Controllers
             {
                 response.EnsureSuccessStatusCode();
 
-                if (response.StatusCode == HttpStatusCode.OK)
+                string responseString = await response.Content.ReadAsStringAsync();
+                if (responseString != string.Empty)
                 {
-                    string responseString = await response.Content.ReadAsStringAsync();
-                    var output = JsonConvert.DeserializeObject<List<subcategory>>(responseString);
-                    return View(output);
+                    var output = JsonConvert.DeserializeObject<List<SubCategory>>(responseString);
+
+                    if (output != null || output.Count != 0)
+                    {
+                        return View(output);
+                    }
+
                 }
-                else
-                {
-                    return View(new List<subcategory>() { });
-                }
+                return View(new List<SubCategory>() { });
             }
             catch (Exception ex)
             {

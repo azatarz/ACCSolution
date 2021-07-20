@@ -13,7 +13,7 @@ namespace ACCSolution.Entities.Models.Databases
         }
 
         // DBSETS
-        public DbSet<subcategory> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
 
 

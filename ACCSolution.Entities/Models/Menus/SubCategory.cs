@@ -8,6 +8,6 @@ namespace ACCSolution.Entities.Models.Menus
 	{
 		public string ReportPath { get; set; }
 
-		public int CategoryId { get; set; }
-	}
+        public int CategoryId { get; set; }
+    }
 }
