@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace ACCSolution.Repository
 {
-    public class CategoryRepository : RepositoryBase<Category>, ICategoryRepository
+    public class CategoryRepository : RepositoryBase<subcategory>, ICategoryRepository
     {
         public CategoryRepository(RepositoryContext context) : base(context)
         {
@@ -17,9 +17,9 @@ namespace ACCSolution.Repository
 
 
 
-        public Category FindAllById(int id)
+        public subcategory FindAllById(int id)
         {
-            return Context.Set<Category>().Where(x => x.Id == id).FirstOrDefault();
+            return Context.Set<subcategory>().Where(x => x.Id == id).FirstOrDefault();
         }
 
 

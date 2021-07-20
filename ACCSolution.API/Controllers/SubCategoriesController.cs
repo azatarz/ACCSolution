@@ -35,11 +35,16 @@ namespace ACCSolution.API.Controllers
         [HttpGet("{id}")]
         public ActionResult<List<SubCategory>> GetSubCategoryById(int id)
         {
+            var AllSubcategoriesById = _unitOfWork.SubCategoryRepository.FindSubCategoryByCategoryID(id);
+
+            if(AllSubcategoriesById==null)
+                return NoContent();
+            return Ok(AllSubcategoriesById);
             //var allSubCategories = _unitOfWork.SubCategoryRepository.FindSubCategory();
             //if (allSubCategories != null)
             //    return Ok(allSubCategories);
 
-            return NoContent();
+
         }
     }
 }

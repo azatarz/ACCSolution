@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ACCSolution.Entities.Models.Menus
 {
-    public class Category : MenuBase
+    public class subcategory : MenuBase
     {
         public List<SubCategory> SubCategories { get; set; }
     }

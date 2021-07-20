@@ -23,7 +23,7 @@ namespace ACCSolution.API.Controllers
 
 
         [HttpGet]
-        public ActionResult<List<Category>> GetAllCategories()
+        public ActionResult<List<subcategory>> GetAllCategories()
         {
             var allCategories = _unitOfWork.CategoryRepository
                 .FindAll()
@@ -36,7 +36,7 @@ namespace ACCSolution.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<List<Category>> GetCategoryById(int id)
+        public ActionResult<List<subcategory>> GetCategoryById(int id)
         {
             var allCategories = _unitOfWork.CategoryRepository.FindAllById(id);
             if (allCategories != null)
@@ -47,7 +47,7 @@ namespace ACCSolution.API.Controllers
 
 
         [HttpPost]
-        public ActionResult InsertCategory(Category category)
+        public ActionResult InsertCategory(subcategory category)
         {
             //string name = category.Name.ToString();
             //var cat=_unitOfWork

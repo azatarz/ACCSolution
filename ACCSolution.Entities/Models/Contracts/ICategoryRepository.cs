@@ -5,10 +5,10 @@ using System.Text;
 
 namespace ACCSolution.Entities.Models.Contracts
 {
-    public interface ICategoryRepository : IRepositoryBase<Category>
+    public interface ICategoryRepository : IRepositoryBase<subcategory>
     {
         // IEnumerable<Category> FindAll();
-        Category FindAllById(int id);
+        subcategory FindAllById(int id);
 
         
     }

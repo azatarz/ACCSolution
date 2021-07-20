@@ -24,12 +24,12 @@ namespace ACCSolution.WEB.Controllers
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     string responseString = await response.Content.ReadAsStringAsync();
-                    var output = JsonConvert.DeserializeObject<List<Category>>(responseString);
+                    var output = JsonConvert.DeserializeObject<List<subcategory>>(responseString);
                     return View(output);
                 }
                 else
                 {
-                    return View(new List<Category>() { });
+                    return View(new List<subcategory>() { });
                 }
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace ACCSolution.WEB.Controllers
 
         }
 
-        [HttpGet("{id}")] 
+        //[HttpGet("{id}")] 
         public async Task<ActionResult> Subcategory(int id)
 		{
             CustomWebClient client = new CustomWebClient();
@@ -51,12 +51,12 @@ namespace ACCSolution.WEB.Controllers
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     string responseString = await response.Content.ReadAsStringAsync();
-                    var output = JsonConvert.DeserializeObject<List<Category>>(responseString);
+                    var output = JsonConvert.DeserializeObject<List<subcategory>>(responseString);
                     return View(output);
                 }
                 else
                 {
-                    return View(new List<Category>() { });
+                    return View(new List<subcategory>() { });
                 }
             }
             catch (Exception ex)

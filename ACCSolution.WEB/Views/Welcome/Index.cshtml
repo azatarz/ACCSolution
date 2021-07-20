@@ -1,4 +1,4 @@
-﻿@model List<Category>
+﻿@model List<subcategory>
 
 <p>Hello abed this is the list of all categories</p>
 
@@ -9,7 +9,7 @@
 		<div class="card">
 			<img class="card-img-top" src="@imagePath" alt="Card image cap" style="height:100px">
 			<div class="card-body">
-				<a href="#">	<h5 class="card-title">@category.Name</h5></a>
+				<a href="@Url.Action("Subcategory",new {id=category.Id })">	<h5 class="card-title">@category.Name</h5></a>
 			</div>
 		</div>
 
